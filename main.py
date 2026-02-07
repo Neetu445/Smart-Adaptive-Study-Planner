@@ -19,7 +19,9 @@ while True:
 
 
 # Graduation Year validation
-current_year = datetime.datetime.now().year
+
+        current_year = datetime.datetime.now().year
+
 while True:
     grad_year = input("Graduation Year: ").strip()
     if not grad_year.isdigit():
@@ -28,10 +30,12 @@ while True:
         print("Year must be 4 digits.")
     elif int(grad_year) < current_year:
         print("Graduation year cannot be in the past.")
+    elif int(grad_year) > current_year + 10:
+        # Optional: restrict too far future, e.g., 10 years ahead
+        print("Graduation year seems too far in the future.")
     else:
         grad_year = int(grad_year)
         break
-        
 
 while True:
     email = input("Email ID: ").strip()
