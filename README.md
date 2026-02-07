@@ -1,59 +1,60 @@
-# Smart-Adaptive-Study-Planner
-Smart Adaptive Study Planner that prioritizes subjects based on difficulty and deadlines, helping students study efficiently and reduce mental stress.
+# Smart Adaptive Study Planner
 
-## overview
-This is a simple, adaptive study planner designed for students to prioritise subjects based on **difficulty and upcoming deadlines**.
-The planner helps to reduce mental stress generating a clear, actionable study order.
+## Project Description
+This is a **Smart Adaptive Study Planner** designed for students to help them plan their study schedule **intelligently**. It prioritizes subjects based on **difficulty** and **upcoming deadlines**, while also considering cognitive load to prevent burnout.  
 
-Even though this is a minimal MVP, it demonstrates** adaptive prioritization logic** and can be extended to include 
-student details, study hours, and confidence levels.
+The planner is **adaptive**, meaning it adjusts priorities and estimated study hours based on user inputs for **difficulty**, **deadline**, and **available study hours**. It provides a **clear, actionable daily plan**.
 
-## features
-- Input subjects, difficulty level(1-5), and deadline(days left)
-- Generates a **priority-based study plan**
-- Highest priority subjects (hardest + nearest dadline) appear first
-- Simple, transparent logic for easy understanding
-- Work fully in Python
+---
 
-## How to run
-1. open 'main.py' in Python(Replit or local Python environment)
-2. Run the program
-3. FOllow input prompts:
-       -Number of subjects
-       -Name of each subject
-       -Difficulty(1-5)
-       - Deadline (days left until exam)
-4. The program outputs a **priority-odered study plan** for entered subjects
+## Features
 
-# Sample Input
-Number of subject:3 Subject1: Math Difficulty(1-5): 4 Deadline(days left):5
-Subject2: Physics Difficulty(1-5):3 Deadline(days left):7 
-Subject3: Cemistry Difficulty(1-5): 5 Deadline(days left):3
+- **Priority Calculation:** Priority = Difficulty / Deadline  
+- **Emergency Boost:** If a subject’s exam is near (≤ 2 days), its priority is increased  
+- **Cognitive Load Adjustment:** Reduces study hours for very difficult subjects to prevent burnout  
+- **Sorted Study Plan:** Subjects are listed from highest to lowest priority  
+- **Adaptive & Transparent:** Students can understand why a subject has higher priority  
 
-# Sample output
-Collected Subjects and Priorities: Chemistry: Difficulty=5, Deadline = 3 , Estimated Study Hours =6
-Math: Difficulty=5, Deadline = 3, Estimated Study Hours =5
-Physics: Difficulty=3, Deadline =7, Estimated Study Hours =3
+---
 
-# future enhancements
-- Include **Student details**: Name, College, Graduation year, Email
-- Imclude **credit for each subject**
-- include **daily study hours** and preferred study times
-- Include **strong/weak** areas and confidence levels
-- Actionable next step suggestions(eg. "Revise tree before Graphs")
-- visualistaion: color-coded past schedule, calender veiw
-- Adaptive logic using past performance and learning speed
+## How to Use
 
-## Demo instructions
+1. Run `main.py`
+2. Enter **student details**: Name, Graduation Year, Email  
+3. Enter **available study hours** for weekdays and weekends  
+4. Enter **number of subjects**  
+5. For each subject, enter:
+   - Subject name  
+   - Difficulty (1-5)  
+   - Deadline (days left)  
+6. The program generates:
+   - Collected subjects and deadlines  
+   - Estimated study hours per subject  
+   - Smart, prioritized study plan  
 
--Run 'main.py' in Replit
--Input Subjects, Difficulty, and deadlines
--Observe priority-sorted output
--Record the screen (optional, for hackathon submission vedio)
+---
 
-## Submission Notes
-- This repositry is **public**
-- MVP  ready for **hackathon submission**
-- can be enhanced later without breaking current logic
-- Submission Link: [
+## Sample Input
+Name: Aman Graduation Year: 2026 Email: aman@example.com Weekday hours: 3 Weekend hours: 6 Subjects: Data Structures, Operating Systems, Engineering Mathematics Difficulties: 4, 5, 3 Deadlines (days left): 3, 2, 5
 
+
+## Sample Output
+Collected Subjects and Deadlines: Data Structures: Difficulty=4, Deadline=3 Operating Systems: Difficulty=5, Deadline=2 Engineering Mathematics: Difficulty=3, Deadline=5
+Generating Your Smart Plan: Subject          Difficulty Deadline  Est. Hours Operating Systems 5         2         6.5 Data Structures   4         3         5.0 Engineering Mathematics 3   5         3.5
+Plan for: Aman, Graduation Year: 2026, Email: aman@example.com
+
+## Future Goals / Extensions
+
+- Include **strong/weak areas** per subject to personalize priorities  
+- Track **student performance & learning speed** to adapt study plans dynamically  
+- Include **peer-to-peer learning** suggestions  
+- Add a **graphical interface** with a visual calendar view  
+- Integrate AI/ML to predict **optimal learning sequence** for each student  
+
+
+
+## Hackathon Notes
+
+- This project is a **working MVP** for the hackathon submission  
+- It demonstrates **impactful, practical, and personalized study planning**  
+- GitHub repo contains **main.py** and this README for reference
