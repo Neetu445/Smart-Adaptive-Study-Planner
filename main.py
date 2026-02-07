@@ -1,12 +1,46 @@
+import re
+import datetime
+
 print("    SMART STUDY PLANNER     ")
 
 # --------------------------
 # Student Details
 # --------------------------
 print("\nEnter Student Details:")
-student_name = input("Name: ").strip()
-grad_year = input("Graduation Year: ").strip()
-email = input("Email ID: ").strip()
+# Student name input with validation
+while True:
+    student_name = input("Name: ").strip()
+    if student_name == "":
+        print("Name cannot be empty.")
+    elif not all(c.isalpha() or c.isspace() for c in student_name):
+        print("Name can only contain letters and spaces.")
+    else:
+        break
+
+
+# Graduation Year validation
+current_year = datetime.datetime.now().year
+while True:
+    grad_year = input("Graduation Year: ").strip()
+    if not grad_year.isdigit():
+        print("Enter a valid 4-digit year.")
+    elif len(grad_year) != 4:
+        print("Year must be 4 digits.")
+    elif int(grad_year) < current_year:
+        print("Graduation year cannot be in the past.")
+    else:
+        grad_year = int(grad_year)
+        break
+        
+
+while True:
+    email = input("Email ID: ").strip()
+    pattern = r'^[\w\.-]+@[\w\.-]+\.\w+$'
+    if re.match(pattern, email):
+        break
+    else:
+        print("Enter a valid email address.")
+
 
 # --------------------------
 # Daily Study Hours
